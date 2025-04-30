@@ -6,7 +6,7 @@
     <title>MHS Architecture</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="images/Joann's Logo (1).png" type="image/png">
+    <link rel="icon" href="images/Joann's Logo (1).png" type="image/png" />
 
     <!-- Link to Bootstrap 5 CSS -->
     <link
@@ -17,109 +17,15 @@
     />
 
     <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Link to Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-  </head>
-
-    <style>
-      body {
-        background-color: #f9cce3;
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-      header {
-        background-color: rgba(255, 230, 240, 0.8);
-        padding: 10px 20px;
-        border-bottom: 1px solid #ccc;
-        width: 100%;
-        backdrop-filter: blur(5px);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        transition: all 0.3s ease;
-      }
-
-      header.fixed {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-      }
-      header img {
-        height: 200px;
-      }
-      nav {
-        display: flex;
-        gap: 10px;
-      }
-      nav button {
-        background-color: #dcdcdc;
-        border: none;
-        padding: 10px 20px;
-        margin: 5px 0;
-        border-radius: 10px;
-        cursor: pointer;
-      }
-      .nav-container {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-      }
-      .section {
-        text-align: center;
-        padding: 40px 20px;
-        padding-top: 140px; /* space for fixed header */
-      }
-      .images-grid {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .images-grid img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border: 2px solid #ccc;
-      }
-      .form-box,
-      .text-box {
-        background-color: white;
-        border: 1px solid #ccc;
-        width: 70%;
-        margin: 20px auto;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      .form-box textarea,
-      .form-box input {
-        width: 100%;
-        margin-top: 10px;
-        padding: 10px;
-      }
-      .map-form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-      .story-imgs {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-      }
-      .story-imgs img {
-        width: 150px;
-        height: 150px;
-        border-radius: 10px;
-      }
-    </style>
   </head>
   <body>
     <header>
@@ -129,11 +35,9 @@
           alt="Joann's Sweet Treats Logo"
         />
         <nav>
-          <button><img src="menu-icon.png" alt="Menu" height="40" /></button>
-          <button>
-            <img src="contact-icon.png" alt="Contact" height="40" />
-          </button>
-          <button><img src="about-icon.png" alt="About" height="40" /></button>
+          <button>Menu</button>
+          <button>Contact</button>
+          <button>About</button>
         </nav>
       </div>
     </header>
@@ -164,22 +68,24 @@
     <div class="section">
       <h3>Shipping and Delivery</h3>
       <div class="map-form">
-        <img src="florida-map-placeholder.png" alt="Florida Map" width="120" />
+        <img src="images/florida.png" alt="Florida Map" width="350" />
         <input type="text" placeholder="Enter Zip Code" />
       </div>
     </div>
 
     <div class="section">
       <h3>Our Story</h3>
-      <div class="text-box">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at
-          eros nec lacus dapibus euismod.
-        </p>
-      </div>
-      <div class="story-imgs">
-        <img src="couple1.jpg" alt="Joann and Partner" />
-        <img src="couple2.jpg" alt="Joann and Partner" />
+      <div class="text-box story-layout">
+        <div class="story-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus at
+            eros nec lacus dapibus euismod.
+          </p>
+        </div>
+        <div class="story-imgs">
+          <img src="images/joann3.jpg" alt="Joann and Partner" />
+          <img src="images/joann1.JPG" alt="Joann and Partner" />
+        </div>
       </div>
     </div>
   </body>
