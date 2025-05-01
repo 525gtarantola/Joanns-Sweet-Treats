@@ -1,124 +1,167 @@
 body {
-    background-color: #f9cce3;
-    font-family: "Delius", cursive;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: rgba(255, 230, 240, 0.8);
-    padding: 10px 20px;
-    border-bottom: 1px solid #ccc;
-    width: 100%;
-    backdrop-filter: blur(5px);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    transition: all 0.3s ease;
-  }
-  
-  header.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-  }
-  
-  header img {
-    height: 200px;
-  }
-  
-  nav {
-    display: flex;
-    gap: 10px;
-  }
-  
-  nav button {
-    background-color: #dcdcdc;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px 0;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .nav-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .section {
-    text-align: center;
-    padding: 40px 20px;
-    padding-top: 140px; /* space for fixed header */
-  }
-  
-  .images-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  
-  .images-grid img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 2px solid #ccc;
-  }
-  
-  .form-box,
-  .text-box {
-    background-color: white;
-    border: 1px solid #ccc;
-    width: 70%;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .form-box textarea,
-  .form-box input {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-  }
-  
-  .map-form {
-    background-color: white;
-    border: 1px solid #ccc; /* same border color as other sections */
-    padding: 20px;
-    border-radius: 10px;
-    width: 70%;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  
-  /* Updated Our Story section */
-  .story-layout {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px; /* Closer text to image */
-  }
-  
-  .story-layout .text-box {
-    flex: 1;
-  }
-  
-  .story-layout .story-imgs {
-    display: flex;
-    gap: 35px; /* Closer image-to-image */
-  }
-  
-  .story-layout .story-imgs img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-  }
+  background-color: #f9cce3;
+  font-family: "Delius", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(255, 230, 240, 0.8);
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header img {
+  height: 200px;
+}
+
+nav button {
+  background-color: white; /* Set initial background color to white */
+  border: none;
+  padding: 15px 30px; /* Increase padding to make the buttons bigger */
+  margin: 10px; /* Increased margin to spread buttons out more evenly */
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add smooth transitions */
+  font-size: 18px; /* Increase font size for larger text */
+}
+
+nav {
+  display: flex;
+  gap: 20px; /* Add more gap between buttons to spread them out */
+  justify-content: center; /* Center the buttons evenly in the navbar */
+}
+
+nav button:hover {
+  background-color: #f9cce3; /* Change background color to pink on hover */
+  transform: scale(1.1); /* Slightly enlarges the button */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow on hover */
+}
+
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.section {
+  text-align: center;
+  padding: 40px 20px;
+  padding-top: 140px; /* space for fixed header */
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 20px;
+  justify-items: center;
+  padding: 20px 0;
+}
+
+.images-grid img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+}
+
+.form-box,
+.text-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Center form contents */
+.form-box form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style and center inputs and button */
+.form-box textarea,
+.form-box input,
+.form-box form button {
+  width: 80%;
+  max-width: 500px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* Center the paragraph text */
+.form-box p {
+  text-align: center;
+}
+
+.map-form {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Updated Our Story section */
+.story-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px; /* Closer text to image */
+}
+
+.story-layout .text-box {
+  flex: 1;
+}
+
+.story-layout .story-imgs {
+  display: flex;
+  gap: 35px; /* Closer image-to-image */
+}
+
+.story-layout .story-imgs img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.bordered-img {
+  border: 1px solid black;
+  border-radius: 10px; /* Matches your other image styling */
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+}
+
+form button {
+  background-color: #dcdcdc;
+  border: none;
+  padding: 8px 16px; /* Reduced padding */
+  font-size: 14px; /* Optional: reduce font size */
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
