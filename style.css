@@ -1,5 +1,8 @@
 body {
-background-color: #f9cce3;
+  background-image: url('images/8c0d251b-a869-4f29-ab69-ef208b2af9f0.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   font-family: "Delius", cursive;
   margin: 0;
   padding: 0;
@@ -21,7 +24,7 @@ h1::after {
   left: 0;
   bottom: -10px;
   width: 100%;
-  height: 2px; 
+  height: 2px;
   background-color: rgb(0, 0, 0);
 }
 
@@ -31,7 +34,7 @@ header {
   left: 0;
   width: 100%;
   padding: 10px 20px;
-  background-color: rgba(255, 230, 240, 0.3); /* transparent background */
+  background-color: rgba(255, 230, 240, 0.3);
   backdrop-filter: blur(6px);
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -39,66 +42,74 @@ header {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid #ccc;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 header img {
   height: 200px;
-  transition: transform 1s ease-in-out; 
+  transition: transform 1s ease-in-out;
 }
 
 header img:hover {
-  transform: rotate(360deg); 
+  transform: rotate(360deg);
 }
 
 @keyframes spin {
   0% {
-    transform: rotate(0deg); 
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg); 
+    transform: rotate(360deg);
   }
 }
 
-
-button {
-  background-color: white; 
+/* Button styles with hover animation and underline */
+button,
+nav button,
+form button {
+  background-color: white;
   border: none;
-  padding: 15px 30px; 
+  padding: 15px 30px;
   margin: 10px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; 
-  font-size: 18px; 
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
-button:hover {
-  background-color: #f9cce3; 
-  transform: scale(1.1);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+button::after,
+nav button::after,
+form button::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #f9cce3; /* Hover underline color */
+  transition: width 0.3s ease;
 }
 
-nav button {
-  background-color: white; 
-  border: none;
-  padding: 15px 30px; 
-  margin: 10px; 
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; 
-  font-size: 18px; 
+button:hover,
+nav button:hover,
+form button:hover {
+  transform: scale(1.1); /* Adds the scaling effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+}
+
+button:hover::after,
+nav button:hover::after,
+form button:hover::after {
+  width: 80%; /* Underline animation */
 }
 
 nav {
   display: flex;
-  gap: 20px; 
+  gap: 20px;
   justify-content: center;
-}
-
-nav button:hover {
-  background-color: #f9cce3; 
-  transform: scale(1.1);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .nav-container {
@@ -111,12 +122,12 @@ nav button:hover {
   text-align: center;
   padding: 40px 20px;
   padding-top: 120px;
-  margin-top: 50px; 
+  margin-top: 50px;
 }
 
 .images-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   justify-items: center;
   padding: 20px 0;
@@ -140,14 +151,12 @@ nav button:hover {
   border-radius: 10px;
 }
 
-
 .form-box form {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .form-box textarea,
 .form-box input,
@@ -157,7 +166,6 @@ nav button:hover {
   margin-top: 10px;
   padding: 10px;
 }
-
 
 .form-box p {
   text-align: center;
@@ -171,18 +179,17 @@ nav button:hover {
   width: 70%;
   margin: 20px auto;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-
 .story-layout {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .story-layout .text-box {
@@ -195,25 +202,51 @@ nav button:hover {
 }
 
 .story-layout .story-imgs img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border-radius: 10px;
 }
 
 .bordered-img {
   border: 1px solid black;
-  border-radius: 10px; 
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); 
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 form button {
-  background-color: #dcdcdc;
+  background-color: white;
   border: none;
-  padding: 8px 16px; 
-  font-size: 14px; 
-  margin-top: 10px;
+  padding: 15px 30px;
+  margin: 10px;
   border-radius: 10px;
   cursor: pointer;
+  font-size: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  width: 80%; /* Match the width to the other buttons */
+  max-width: 500px; /* Ensure it's not too wide */
+}
+
+form button::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #f9cce3; /* Hover underline color */
+  transition: width 0.3s ease;
+}
+
+form button:hover {
+  transform: scale(1.1); /* Adds the scaling effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow on hover */
+}
+
+form button:hover::after {
+  width: 20%; /* Underline animation */
 }
 
 .menu-header {
@@ -231,11 +264,27 @@ form button {
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle-menu-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background-color: #f9cce3;
+  transition: width 0.3s ease;
 }
 
 .toggle-menu-btn:hover {
-  background-color: #f9cce3;
   transform: scale(1.05);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-menu-btn:hover::after {
+  width: 80%;
 }
