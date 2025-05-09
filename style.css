@@ -1,5 +1,6 @@
 body {
   background-image: url('images/8c0d251b-a869-4f29-ab69-ef208b2af9f0.png');
+  background-color:#f9cce3; 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -125,20 +126,20 @@ nav {
   margin-top: 50px;
 }
 
-.images-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  justify-items: center;
-  padding: 20px 0;
-}
-
 .images-grid img {
-  width: 250px;
-  height: 250px;
+  width: 300px;  /* increased from 250px */
+  height: 300px;
   object-fit: cover;
+  display: block;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.images-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Use auto-sized columns */
+  gap: 20px; /* Controls spacing between all images */
+  justify-content: center; /* Centers the whole grid */
 }
 
 .form-box,
@@ -255,6 +256,7 @@ form button:hover::after {
   align-items: center;
   gap: 10px;
   margin-top: 120px;
+  margin-bottom: 40px; /* Add this line */
 }
 
 .toggle-menu-btn {
