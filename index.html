@@ -41,11 +41,11 @@
       <button class="toggle-menu-btn">Toggle menu</button>
     </div>
     <div class="images-grid">
-      <img src="images/IMG_9114.JPG" alt="Item 1" />
-      <img src="images/IMG_9115.JPG" alt="Item 2" />
-      <img src="images/IMG_9116.JPG" alt="Item 3" />
-      <img src="images/IMG_9117.JPG" alt="Item 4" />
-    </div>
+  <img id="menu-img-1" src="images/IMG_9114.JPG" alt="Item 1" />
+  <img id="menu-img-2" src="images/IMG_9115.JPG" alt="Item 2" />
+  <img id="menu-img-3" src="images/IMG_9116.JPG" alt="Item 3" />
+  <img id="menu-img-4" src="images/IMG_9117.JPG" alt="Item 4" />
+</div>
   </div>
   <div class="section">
     <h1>About Us</h1>
@@ -192,5 +192,40 @@
       }
     });
   </script>
+  <script>
+  const toggleButton = document.querySelector('.toggle-menu-btn');
+  let isOriginal = true;
+
+  toggleButton.addEventListener('click', () => {
+    const imagePaths1 = [
+      'images/IMG_9114.JPG',
+      'images/IMG_9115.JPG',
+      'images/IMG_9116.JPG',
+      'images/IMG_9117.JPG',
+    ];
+
+    const imagePaths2 = [
+      'images/alternate1.jpg',
+      'images/alternate2.jpg',
+      'images/alternate3.jpg',
+      'images/alternate4.jpg',
+    ];
+
+    const images = [
+      document.getElementById('menu-img-1'),
+      document.getElementById('menu-img-2'),
+      document.getElementById('menu-img-3'),
+      document.getElementById('menu-img-4'),
+    ];
+
+    const newPaths = isOriginal ? imagePaths2 : imagePaths1;
+
+    images.forEach((img, index) => {
+      img.src = newPaths[index];
+    });
+
+    isOriginal = !isOriginal;
+  });
+</script>
 </body>
 </html>
