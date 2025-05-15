@@ -27,15 +27,16 @@
         alt="Joann's Sweet Treats Logo"
       />
       <nav>
-        <button>Menu</button>
-        <button>About Us</button>
-        <button>Reviews</button>
-        <button>Shipping/Delivery</button>
-        <button>Contact</button>
-      </nav>
+  <a href="#menu">Menu</a>
+  <a href="#about">About Us</a>
+  <a href="#reviews">Reviews</a> <!-- Optional: if you later add a reviews section -->
+  <a href="#shipping">Shipping/Delivery</a>
+  <a href="#contact">Contact</a>
+</nav>
     </div>
   </header>
-  <div class="section">
+  <!-- Menu Section -->
+ <div class="section" id="menu">
     <div class="menu-header">
       <h1>Menu</h1>
       <button class="toggle-menu-btn">Toggle menu</button>
@@ -47,7 +48,11 @@
   <img id="menu-img-4" src="images/IMG_9117.JPG" alt="Item 4" />
 </div>
   </div>
-  <div class="section">
+</div>
+<!-- Menu Section END -->
+
+<!-- About Us Section -->
+  <div class="section" id="about">
     <h1>About Us</h1>
     <div class="text-box story-layout">
       <div class="story-text">
@@ -77,7 +82,11 @@
       </div>
     </div>
   </div>
-  <div class="section">
+   <!-- About Us Section END -->
+
+   
+<!-- Shipping/Delivery Section -->
+<div class="section" id="shipping">
     <h1>Shipping and Delivery</h1>
     <div class="map-form">
       <p>
@@ -95,7 +104,12 @@
       <p id="eligibilityMessage"></p>
     </div>
   </div>
-  <div class="section">
+  </div>
+ 
+<!-- Shipping/Delivery Section END -->
+
+<!-- Contact Section -->
+ <div class="section" id="contact">
     <h1>Contact Us</h1>
     <div class="form-box">
       <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
@@ -113,6 +127,10 @@
       </form>
     </div>
   </div>
+  </div>
+  <!-- Contact Section END -->
+
+
   <script>
     // Function to check if delivery is eligible based on distance
     function checkEligibility() {
@@ -192,40 +210,65 @@
       }
     });
   </script>
-  <script>
+ <script>
   const toggleButton = document.querySelector('.toggle-menu-btn');
-  let isOriginal = true;
+  let currentSetIndex = 0;
 
-  toggleButton.addEventListener('click', () => {
-    const imagePaths1 = [
+  const imageSets = [
+    [ // Original
       'images/IMG_9114.JPG',
       'images/IMG_9115.JPG',
       'images/IMG_9116.JPG',
       'images/IMG_9117.JPG',
-    ];
+    ],
+    [ // Alternate 1
+      'images/IMG_9118.JPG',
+      'images/IMG_9119.JPG',
+      'images/IMG_9120.JPG',
+      'images/IMG_9291.JPG',
+    ],
+    [ // Alternate 2
+      'images/IMG_9292.JPG',
+      'images/IMG_9293.JPG',
+      'images/IMG_9294.JPG',
+      'images/IMG_9295.JPG',
+    ]
+  ];
 
-    const imagePaths2 = [
-      'images/alternate1.jpg',
-      'images/alternate2.jpg',
-      'images/alternate3.jpg',
-      'images/alternate4.jpg',
-    ];
+  const images = [
+    document.getElementById('menu-img-1'),
+    document.getElementById('menu-img-2'),
+    document.getElementById('menu-img-3'),
+    document.getElementById('menu-img-4'),
+  ];
 
-    const images = [
-      document.getElementById('menu-img-1'),
-      document.getElementById('menu-img-2'),
-      document.getElementById('menu-img-3'),
-      document.getElementById('menu-img-4'),
-    ];
+  toggleButton.addEventListener('click', () => {
+    // Cycle to next set
+    currentSetIndex = (currentSetIndex + 1) % imageSets.length;
 
-    const newPaths = isOriginal ? imagePaths2 : imagePaths1;
+    const newPaths = imageSets[currentSetIndex];
 
     images.forEach((img, index) => {
       img.src = newPaths[index];
     });
-
-    isOriginal = !isOriginal;
   });
 </script>
+
+<footer>
+  <p class="footer-title">Thank you for visiting!</p>
+
+  <div class="footer-links">
+    <a href="https://www.facebook.com/yourpage" class="footer-link" target="_blank">
+      <img src="images/facebook-new.png" alt="Facebook" class="social-icon">
+      Visit us on Facebook
+    </a>
+
+    <a href="https://github.com/yourgithubusername" class="footer-link" target="_blank">
+      <img src="images/25231.png" alt="GitHub" class="social-icon github-icon">
+      Made by Gabrielle Tarantola
+    </a>
+  </div>
+</footer>
+
 </body>
 </html>
