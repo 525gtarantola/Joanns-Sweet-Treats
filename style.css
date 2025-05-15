@@ -380,3 +380,43 @@ footer {
 .footer-link:hover .social-icon {
   transform: scale(1.1);
 }
+
+.testimonials-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.testimonials-container blockquote {
+  background-color: white;
+  border-left: 5px solid #f9cce3;
+  padding: 20px;
+  border-radius: 10px;
+  font-style: italic;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+
+.testimonials-container blockquote footer {
+  margin-top: 10px;
+  text-align: right;
+  font-weight: bold;
+  font-style: normal;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px; /* spacing between stars and text */
+}
+
+.testimonials-container blockquote footer .star-rating {
+  height: 145px; /* adjust size as needed */
+  width: auto;
+  display: inline-block;
+}
+
+#reviews h1 {
+  margin-bottom: 40px; /* increase space below the heading */
+}
